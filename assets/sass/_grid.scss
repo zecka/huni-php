@@ -1,0 +1,96 @@
+[class*="container"]{
+	margin: auto;	
+}
+.container{
+	max-width: 1170px;
+	width: 85%;
+}
+.container.mobile-nomargin{
+	width: 100%;
+}
+.flex{
+	display: flex;
+}
+.row{
+	margin: 0 -15px;
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.overflowfix{
+	overflow: hidden;
+}
+.container-10{
+	width: 83.3333333333333%;
+}
+.container-8{
+	width: 66.66666666666666%;
+}
+.container-6{
+	width: 50%;
+}
+.container-4{
+	width: 33%;
+}
+
+.row.padding0 [class*="col-"]{
+	padding: 0;
+}
+
+
+.row{
+	[class*="col-"]{
+		float: left;
+		padding: 0 15px;
+	}
+	.col-4{
+		width: 33%;
+	}
+	.col-5{
+		width: 41.6666666666666%;
+	}
+	.col-6{
+		width: 50%;
+	}
+	.col-7{
+		width: 58.33333333333333%;
+	}
+	.col-8{
+		width: 66%;
+	}
+	.col-9{
+		width: 75%;
+	}
+	.col-3{
+		width: 25%;
+	}
+	.col-12{
+		float: none;
+	}
+	&::after{
+		content:"";
+		display: block;
+		clear: both;
+	}
+}
+
+@include breakpoint(phone) {
+	.row{
+		[class*="col-"]{
+			width: 100%;
+			float: none;
+		}
+	}
+	.flex{
+		flex-direction: column;
+	}
+	.mobile-center{
+		text-align: center;
+	}
+	[class*="container"]{
+		width: 85%;
+	}
+}

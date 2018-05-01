@@ -1,0 +1,187 @@
+
+
+/* ----------------------------
+	    footer
+---------------------------- */
+
+
+#partners{
+	color: $primary-color;
+	font-size: 1.25em;
+	line-height: 1.4em;
+	font-weight: bold;
+	.logos{
+		figure{
+			display: inline-block;
+			&+figure{
+				margin-left: 130px;
+			}
+			@include breakpoint(phone) {
+				display: block;
+				width: 50%;
+				float: left;
+				margin-bottom: 20px;
+				&:nth-child(odd){
+					clear: left;	
+				}
+				&+figure{
+					margin-left: 0px;
+				}
+				img{
+					max-width: 90%;
+					margin: auto;
+				}
+				
+			}
+
+		}
+
+	}
+				
+
+}
+#footer-cta{
+	background-color: $primary-dark;
+	h2{
+		margin-bottom: 10px;
+		margin-top: 0;
+	}
+	.button{
+		margin-top: 10px;
+	}
+}
+
+
+footer{
+	.newsletter{
+			padding-top: 150px;
+			padding-bottom: 120px;
+
+		.mc4wp-form input[type=submit]{
+			border-radius: 100px;
+			text-transform: uppercase;
+			font-weight: lighter;
+			&:hover{
+				background-color: $primary-dark;
+				color: #fff;
+			}
+		}
+		input, .button{
+			float: left;
+			height: 63px;
+			border-radius: 100px;			
+			@include breakpoint(phone) {
+				float: none;
+			}
+
+		}
+		input{
+			
+			padding: 10px 30px;
+			display: inline-block;
+			border: 1px solid #ccc;
+			margin-right: -50px;
+			width: calc( 100% - 235px);
+			transition: all .2s ease-in-out;
+			@include breakpoint(phone) {
+				width: 100%;
+			}
+
+			&:focus{
+				outline: none;
+				box-shadow: 0px 0px 16px $primary-color;
+				border-color:#fff; 
+			}
+			&::placeholder { /* Most modern browsers support this now. */
+			   color: #939598;
+			}
+			
+		}
+		
+		.button{
+			width: 235px;
+			font-size: 20px;
+			text-align: center;
+			line-height: 38px;
+			&:hover{
+				background-color: $primary-dark;
+				border-color: $primary-dark;
+				color: #fff;
+			}
+			@include breakpoint(phone) {
+				margin: 20px auto 0;
+				display: block;
+				
+			}
+
+		}
+		&::after{
+			display: block;
+			clear: both;
+			content: "";
+		}
+	}
+	#prefooter{
+		padding-top: 50px;
+	}
+	nav{
+		text-align: center;
+		ul{
+			text-align: left;
+			display: inline-block;
+			padding: 0;
+		}
+		&.right{
+			text-align: right;
+			ul{
+				display: inline-block;
+				text-align: left;
+			}
+		}
+		li{
+			display: block;
+			margin: 0;
+			margin-bottom: 30px;
+			a{
+				color: #6d6e71;
+				&:hover{
+					color: $primary-color;
+				}
+			}
+		}
+	}
+	.copyright{
+		background-color: $primary-dark;
+		padding: 45px;
+	}
+	.social-links{
+		font-size: 1.375em;
+		margin-top: 35px;
+		a+a{
+			margin-left: 25px;
+		}
+	}
+	@include breakpoint(phone) {
+		.col-4{
+			text-align: center;
+			margin-bottom: 80px;
+		}
+		.logo{
+			display: inline-block;
+		}
+		nav{
+			margin-top: 20px;
+			text-align:  center;
+			&.right{
+				text-align: center;
+			}
+			ul,
+			&.right ul{
+				margin: 0;
+				text-align: center;
+				padding: 0;
+			}
+		}
+	}
+	
+}

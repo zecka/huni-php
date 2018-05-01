@@ -1,0 +1,603 @@
+/* ------------------
+	    HEADER 
+------------------ */
+
+
+
+.logo{
+	display: block;
+	width: $logo-width;
+	height: $logo-height;
+	font-size: 28px;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+	@include breakpoint(phone) {
+		display: none;
+	}
+}
+.logo-mobile{
+	display: none;
+	float: left;
+	@include breakpoint(phone) {
+		display: block;
+	}
+}
+.logo.black{
+	color: #000;
+}
+header{
+	background-color: $primary-color;
+	padding: 45px 0 30px;
+	&.transparent{
+		background-color: transparent;
+		position: absolute;
+		z-index: 90;
+		width: 100%;
+	}
+	.header-wrap{
+		top: -100px;
+		transition: all .3s ease-in-out;
+		width: 100%;
+		
+	}
+
+	.logo{
+		@include breakpoint(tablette) {
+			margin: 0 0 20px;
+		}
+
+	}
+	nav.primary{
+		line-height: 0.7em;
+		text-align: center;
+		ul{
+			padding-left: 0;
+		}
+		@include breakpoint(phone) {
+			text-align: left;
+			
+		}
+
+	}
+	.secondary{
+		@include breakpoint(tablette) {
+			position: absolute;
+			right: 40px;
+		}
+		.huni-search{
+			display: inline-block;
+			margin-top: 10px;
+		}
+		
+	}
+	&.inverted{
+		a{
+			color: #fff;
+		}
+	}
+	.fa-search{
+		margin-left: 20px;
+	}
+}
+header nav{
+	ul{
+		list-style: none;
+		li{
+			display: inline-block;
+			&+li{
+				margin-left: 33px;
+			}
+		}
+	}
+}
+.hamburger-menu{
+	display: none;
+	position: relative;
+	z-index: 30;
+	width: 39px;
+	height: 29px;
+	cursor: pointer;
+	@include breakpoint(phone) {
+		display: block;
+		float: right;
+	}
+	span{
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+		position: absolute;
+		display: block;
+		transition: all .3s ease-in-out;
+		opacity: 1;
+		transform-origin: left center;
+		&:nth-child(2){
+			top:13px;
+		}
+		&:last-child{
+			bottom: 0;
+		}
+	}
+	&.active{
+		z-index: 55;
+		span{
+			background-color: $primary-color;
+			&:first-child{
+				transform: rotateZ(42deg);
+			}
+			&:nth-child(2){
+				opacity: 0;
+			}
+			&:last-child{
+				transform: rotateZ(-42deg);
+			}
+		}
+	}
+	
+}
+
+.header-flex{
+	transition: all .3s ease-in-out;
+	display: flex;
+	justify-content: space-between;
+	
+	@include breakpoint(md-down) {
+		flex-direction: column;
+	}
+	@include breakpoint(phone) {
+		display: block;
+		min-height: 100vh;
+		background-color: #fff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		transform: translateY(-100%);
+		&.active{
+			transform: translateY(0%);
+			z-index: 50;
+		}
+		nav.primary{
+			margin-top: 80px;
+			width: 100%;
+			float: none;
+			line-height: 1.5em;
+		}
+		ul.menu li {
+			display: block;
+			font-size: 1.5em;
+			padding: 20px 10px;
+			&+li{
+				border-top: 1px solid #ccc;
+			}
+			a{
+				color: #000;
+			}
+		}
+		nav.secondary{
+			width: 100%;
+			text-align: center;
+			margin-top: 50px;
+		}
+	}
+}
+
+nav .menu {
+	&>li{
+		padding-bottom: 15px;
+	}
+	.menu-item-has-children{
+		&:after{
+			content: "";
+			display: inline-block;
+			margin-left: 2px;
+			border: 4px solid transparent;
+			border-top-color: #fff;
+			position: relative;
+			top: 1px;
+			@include breakpoint(phone) {
+				display: none;
+			}
+		}
+	
+	}
+	.sub-menu{
+		opacity: 0;
+		position: absolute;
+		pointer-events: none;
+		z-index: -2;
+		transition: all .3s ease-in-out;
+		padding: 8px 0;
+		background-color: #fff;
+		margin-top: 15px;
+		text-align: left;
+		box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+		li{
+			margin: 0;
+			padding: 0 24px;
+			display: block;
+			line-height: 2.1em;
+			background-color: #fff;
+			a{
+				color: #000;
+			}
+			&:hover{
+				background-color: $light-gray;
+			}
+		}
+		@include breakpoint(phone) {
+			position: static;
+			opacity: 1;
+			box-shadow: none;
+			margin-top: 5px;
+			transition: none;
+			display: none;
+			li{
+				display: block;
+				padding: 0 5px;
+				font-size: .7em;
+				&+li{
+					border-top: none;
+				}
+			}
+		}
+	}
+	&>li{
+		&:hover{
+			.sub-menu{
+				opacity: 1;
+				pointer-events: all;
+				z-index: 2;
+			}
+		}
+	}
+}
+
+/*-----------------------------
+		HEADER TYPE Advanced 
+------------------------------ */
+body.header-type-advanced{
+	@include breakpoint(sm-up) {
+		header{
+			padding-bottom: 0;
+		}
+	}
+	.header-wrap:not(.sticky){
+		.logo{
+			margin: 0;
+		}
+		.header-flex{
+			flex-flow: row wrap;
+		}
+		.menu>li{
+			padding-top: 15px;
+		}
+		
+		.primary{
+			order: 3;
+			background-color: rgba(0, 0, 0, 0.2);
+			width: 100%;
+			margin: 35px -7.5vw 0;
+			width: 100vw;
+			ul.menu{
+				margin: 5px 0;
+			}
+			
+		}
+		.secondary{
+			order:2;
+		}
+	}
+	
+}
+/*-----------------------------
+		HEADER TYPE LEFT 
+------------------------------ */
+@include breakpoint(sm-up) {
+	body.header-type-left{
+		.huni-open-toggle{
+			display: inline-block;
+		}
+		#wrapper{
+			padding-left: 300px;
+			position: relative;
+		}
+		header{
+			position: absolute;
+			height: 100%;
+			width: 300px;
+			left: 0;
+			bottom: 0;
+			top: 0;
+			background-color: $header-background;
+			box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.1);
+		}
+		.header-flex{
+			display: block;
+		}
+		.logo{
+			margin: auto;
+		}
+		nav.primary{
+			ul{
+				padding: 0;
+				li{
+					display: block;
+					margin: 0;
+					padding: 1em 0;
+					font-size: 1.2em;
+					&+li{
+						border-top: 1px solid rgba($primary-color, 0.1);
+					}
+					&::after{
+						display: none;
+					}
+				}
+				
+				.sub-menu{
+					position: static;
+					opacity: initial;
+					text-align: center;
+					box-shadow: none;
+					background-color: transparent;
+					transition: none;
+					margin-top: 20px;
+					display: none;
+	
+					&.active{
+	
+					}
+					a:hover{
+						color: $primary-color;
+					}
+					li{
+						display: block;
+						padding: 0 5px;
+						font-size: .85em;
+						background-color: transparent;
+						&+li{
+							border-top: none;
+						}
+					}
+				}
+			}
+		}
+		.secondary{
+			position: relative;
+			top: initial;
+			right: initial;
+			text-align: center;
+			padding-top: 50px;
+			.huni-search{
+				position: absolute; top: 0; 
+				left:calc(50% - 20px);
+				display: block;
+				width: 40px;
+				border-radius: 30px;
+				font-size: 1.3em;
+				color: rgba(0, 0, 0, 0.3);
+				//border: 1px solid $primary-color;
+				i{
+					margin: 0;
+				}
+			}
+		}
+		
+	}
+}
+/*-----------------------------
+		STICKY HEADER
+------------------------------ */
+.header-wrap{
+	&.sticky{
+		background-color: rgba(0, 0, 0, 0.7);
+		position: fixed;
+		top: 0;
+		z-index: 90;
+		padding: 20px 0;
+		&.open{
+			position: static;
+		}
+		.secondary a.huni-search{
+			display: inline-block;
+			margin-top: 10px;
+		}
+		@include breakpoint(tablette) {
+			.header-flex{
+				flex-direction: row;
+			}
+			ul{
+				padding: 0;
+				margin: 0;
+			}
+			.logo{
+				display: none;
+			}
+			.secondary{
+				position: static;
+				a{
+					display: none;
+				}
+				a.huni-search{
+					display: block;
+				}
+			}
+		}
+
+
+	}
+}
+/*---------------------------
+*/
+.header-wrap:not(.sticky){
+	@if($search-on-header or $secondary-on-header){
+		
+	}@else{
+		.secondary{
+			display: none;
+		}
+	}
+	.primary{
+		margin-bottom: -20px;
+	}
+}
+/*-----------------------------
+		MODAL SEARCH
+------------------------------ */
+.huni-modal-search{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	background-color: rgba(255, 255, 255, 0.95);
+	z-index: 90;
+	display: none;
+	.modal-search-content{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 600px;
+	}
+	.close{
+		position: absolute;
+		right: 30px;
+		top: 40px;
+		width: 39px;
+		height: 29px;
+		cursor: pointer;
+		display: block;
+		transition: all .3s ease-in-out;
+		&::before,
+		&::after{
+			content: "";
+			transform: rotateZ(42deg);
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 3px;
+			background-color: #000;
+			top: 13px;
+		}
+		&::after{
+			transform: rotateZ(-42deg);
+		}
+		&:hover{
+			opacity: .5;
+			transform: rotateZ(180deg);
+		}
+	}
+	.searchform{
+		input{
+			border-radius: 0;
+			background-color: transparent;
+			border: 0;
+			border-bottom: 2px solid #000;
+			color: #000;
+			min-width: 80%;
+			display: block;
+			font-size: 2em;
+			transition: all .2s ease-in-out;
+			padding: .3em 0;
+			&:focus{
+				box-shadow: none;
+				border-bottom: 4px solid #000;
+			}
+		}
+		i{
+			font-size: 2.5em;
+			color: #000;
+		}
+	}
+}
+
+
+
+$padding-button:5px;
+.header-type-default .huni-open-toggle{
+	@include breakpoint(sm-up){
+		display: none;	
+	}
+}
+.huni-open-toggle{
+	height: 11px;
+	width: 11px;
+	box-sizing: content-box;
+	padding: $padding-button;
+	border-radius: 20px;
+	display: none; // inline-block on display
+	margin-left: 10px;
+	margin-top: 1px;
+	position: absolute;
+	opacity: .5;
+	margin-top: -5px;
+	&::before,
+	&::after{
+		content: "";
+		display: block;
+		position: absolute;
+	}
+	&::before{
+		bottom: $padding-button;
+		top: $padding-button;
+		left: calc(50% - 0.5px);
+		border-left: 1px solid #000;
+		transition: all .3s ease-in-out;
+		transform-origin: center center;
+
+	}
+	&::after{
+		bottom: calc(50% - 0.5px);
+		left: $padding-button;
+		right: $padding-button;
+		border-bottom: 1px solid #000;
+	}
+	&.active::before{
+		
+		transform: rotateZ(90deg);
+	}
+	@include breakpoint(phone) {
+		width: 18px;
+		height: 18px;
+		position: relative;
+		float: right;
+	}
+}
+
+
+
+/* ----------------------------
+	  CONDITIONAL DISPLAY
+---------------------------- */
+
+
+@if $secondary-on-header == false {
+	.header-wrap:not(.sticky) .secondary .button{ display: none !important; }
+}
+@if $search-on-header == false {
+	.header-wrap:not(.sticky) .secondary .huni-search{ display: none !important; }
+}
+
+@if $logo-on-sticky == false {
+	.header-wrap.sticky .logo{ display: none !important; }
+}
+@if $secondary-on-sticky == false {
+	.header-wrap.sticky .secondary .button{ display: none !important; }
+}
+@if $search-on-sticky == false {
+	.header-wrap.sticky .secondary .huni-search{ display: none !important; }
+}
+
+
+/* ----------------------------
+	    PAGE TITLE HEADER 
+---------------------------- */
+#pageTitle{
+	background-color: $light-gray;
+	padding: 100px 0 30px;
+	margin-bottom: 100px;
+
+}
