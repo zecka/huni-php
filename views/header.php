@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="<?php echo get_assets_url() ?>fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo get_assets_url() ?>lib/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo get_assets_url() ?>css/style.css">
 </head>
 <body class="header-type-default">
