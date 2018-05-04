@@ -36,6 +36,9 @@ function get_header(){
 function get_footer(){
 	include(dirname(__DIR__).'/views/footer.php');
 }
+function get_sidebar(){
+	include(dirname(__DIR__).'/views/sidebar.php');
+}
 
 
 ?>

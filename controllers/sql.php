@@ -22,3 +22,33 @@ function get_posts($options=array()){
 	return $posts;
 	
 }
+
+function get_comments($options=array()){
+
+	global $db;
+
+	$reponse = $db->query('SELECT * FROM comments');
+	$comments = $reponse->fetchAll( PDO::FETCH_ASSOC );
+
+	return $comments;	
+}
+
+function get_comments_by_id($id){
+
+	global $db;
+
+	$reponse = $db->query('SELECT * FROM comments WHERE article="'.$id.'"');
+	$comments = $reponse->fetchAll( PDO::FETCH_ASSOC );
+
+	return $comments;	
+}
+
+function get_categories($options=array()){
+
+	global $db;
+
+	$reponse = $db->query('SELECT * FROM categories');
+	$categories = $reponse->fetchAll( PDO::FETCH_ASSOC );
+
+	return $categories;	
+}

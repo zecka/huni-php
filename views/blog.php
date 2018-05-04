@@ -1,12 +1,15 @@
 <?php get_header(); ?>
 
 <div class="container">
+	<div class="row">
+	
+	<main class="col-9">
+
 	<div class="articles-list">
 
 <?php 
 
 $posts = get_posts();
-$img = get_upload_url();
 
 foreach ($posts as $key => $post): ?>
 	
@@ -20,6 +23,21 @@ foreach ($posts as $key => $post): ?>
 			<div class="article-footer clearfix">
 				<div class="article-buttons">
 					<a href="" class="button">Explore more</a>
+					<span>
+						<?php
+						$comments=get_comments_by_id($post["id"]);
+						 
+						if(count($comments)>1){
+							echo count($comments)." Comments";
+						}
+						else if(count($comments)==1){
+							echo "1 Comment";
+						}
+						else{
+							echo("No comment");
+						}
+					?>
+				</span>
 				</div>
 				<div class="social-like">
 					<a href="" class="fb-like btn-social">Share</a>
@@ -30,8 +48,13 @@ foreach ($posts as $key => $post): ?>
 	</article>
 
 <?php endforeach; ?>
-	
+</div>
+	</main>
+
+	<?php get_sidebar(); ?>
+
 	</div>
+	
 </div>
 
 <?php get_footer(); ?>
