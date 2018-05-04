@@ -16,6 +16,9 @@ function get_home_url(){
 function get_assets_url(){
 	return get_home_url().'assets/';
 }
+function get_upload_url(){
+	return get_home_url().'assets/upload/';
+}
 function get_root_path(){
 	return dirname(__DIR__).'/';
 }
@@ -25,11 +28,14 @@ function get_views_dir(){
 function get_models_dir(){
 	return dirname(__DIR__).'/models/';
 }
+
+
 function get_header(){
 	include(dirname(__DIR__).'/views/header.php');
 }
 function get_footer(){
 	include(dirname(__DIR__).'/views/footer.php');
 }
+
 
 ?>
