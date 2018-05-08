@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Admin</title>
-</head>
-<body>
-	Admin
-</body>
-</html>
+<?php get_header('admin'); ?>	
+<h1>Bonjour <?php echo $_SESSION['username']; ?>, bienvenue sur l'admin HUNI</h1>
+<?php get_footer('admin'); ?>

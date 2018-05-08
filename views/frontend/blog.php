@@ -15,7 +15,7 @@ foreach ($posts as $key => $post): ?>
 	
 	<article class="clearfix">
 		<figure>
-			<img width="200px" height="200px" src="<?php echo get_upload_url().$post["id"]; ?>.jpg">
+			<img src="<?php echo $post["thumb"]; ?>">
 		</figure>
 		<div class="article-excerpt">
 			<h4><?php echo $post["title"]; ?></h4>
