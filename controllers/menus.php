@@ -15,10 +15,12 @@ function get_menu_items(){
 			'submenu'	=> array(
 				array(
 					'name'		=>'Catégorie 1',
-					'route'		=> 'category/cat1',				),
+					'route'		=> 'category/cat1',				
+				),
 				array(
 					'name'=>'Catégorie 2',
-					'route' => 'category/cat2',				),
+					'route' => 'category/cat2',				
+				),
 			)		
 		),
 		array(
@@ -75,7 +77,7 @@ function display_menu(){
 				<ul class="sub-menu">
 					<?php foreach($item['submenu'] as $sub_item): ?>
 						<li class="<?php echo $sub_item['class']; ?>">
-							<a href="<?php echo get_home_url().'/'.$sub_item['route']; ?>">
+							<a href="<?php echo get_home_url().$sub_item['route']; ?>">
 								<?php echo $sub_item['name']; ?>
 							</a>
 						</li>
