@@ -52,6 +52,7 @@ function set_active_class($route, &$items) {
 			$items[$key]['class'].=' has-children';
 	
 			foreach($item['submenu'] as $subkey => $sub_item):
+				$items[$key]['submenu'][$subkey]['class']='menu__item';
 				if($sub_item['route']===$route){
 					$items[$key]['class'].=' current-parent';
 					$items[$key]['submenu'][$subkey]['class'].=' current';
