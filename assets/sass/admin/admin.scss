@@ -1,7 +1,7 @@
 @import '../frontend/normalize';
 @import 'variables';
 @import 'parts/header';
-
+@import 'layout/forms';
 body{
 	background: linear-gradient(to right, darken($bg-color, 5) 0%, $bg-color 100%);
 	color: $content-color;
@@ -13,4 +13,8 @@ body{
 
 a{
 	color: $primary-color;
+}
+
+main{
+	margin-right: 20px;
 }

@@ -1,8 +1,11 @@
-$primary-color: #c62650;
+$primary-color: #9c27b0;
 $dark-color: #242f39;
-$bg-color: darken($primary-color, 50);
-$content-color: #fff;
+//$bg-color: darken($primary-color, 50);
+//$content-color: #fff;
+
+$bg-color: #fff;
+$content-color: #222;
 
 .test-color{
-	color: #c51e26;
+	color: #a3b2bf;
 }

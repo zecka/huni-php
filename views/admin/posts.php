@@ -1,7 +1,7 @@
 <?php get_header('admin'); ?>
 <h2>Articles</h2>
 
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>ID</th>

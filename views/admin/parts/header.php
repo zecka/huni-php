@@ -1,10 +1,19 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>HUNI | Admin</title>
 	<link rel="stylesheet" href="<?php echo get_assets_url() ?>lib/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	
+	
+    <!-- Material Kit CSS -->
+	<?php $material_folder=get_assets_url().'lib/material-kit'; ?>
+    <link rel="stylesheet" href="<?php echo $material_folder; ?>/assets/css/material-kit.css?v=2.0.3">
+    
+    <!-- ADMIN CSS -->
 	<link rel="stylesheet" href="<?php echo get_assets_url(); ?>/css/admin.css">
+	
+
 </head>
 
 <body>
@@ -61,3 +70,4 @@
 		</ul>
 	</nav>
 </header>
+<main>

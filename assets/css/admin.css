@@ -403,7 +403,7 @@ img {
   height: auto; }
 
 .test-color {
-  color: #c51e26; }
+  color: #a3b2bf; }
 
 body {
   padding-left: 170px;
@@ -418,7 +418,7 @@ header .topbar {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #c62650;
+  background-color: #9c27b0;
   padding-left: 150px;
   text-align: right;
   padding-right: 20px;
@@ -441,7 +441,7 @@ header .primary-nav {
     header .primary-nav li + li {
       border-top: 1px solid rgba(255, 255, 255, 0.1); }
   header .primary-nav a {
-    color: #c62650;
+    color: #9c27b0;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -452,15 +452,40 @@ header .primary-nav {
     margin-bottom: 10px;
     font-size: 2rem; }
 
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  form .field {
+    width: 48%;
+    margin-bottom: 15px; }
+  form .field-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  form input, form select, form textarea {
+    width: 100%;
+    padding: 3px; }
+  form input {
+    background-color: rgba(204, 204, 204, 0.5);
+    border: 0px; }
+  form input[type="submit"] {
+    width: 120px;
+    text-align: center; }
+
 body {
-  background: linear-gradient(to right, black 0%, black 100%);
-  color: #fff; }
+  background: linear-gradient(to right, #f2f2f2 0%, #fff 100%);
+  color: #222; }
 
 html,
 body {
   height: 100%; }
 
 a {
-  color: #c62650; }
+  color: #9c27b0; }
+
+main {
+  margin-right: 20px; }
 
 /*# sourceMappingURL=admin.css.map */
