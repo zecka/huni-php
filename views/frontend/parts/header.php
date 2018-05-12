@@ -8,7 +8,13 @@
 </head>
 <body class="header-type-default">
 	<div id="wrapper">
-		<header class="inverted primarybg">
+		<?php
+		$header_class='inverted primarybg';
+		if(get_current_route()==''){
+			$header_class.=' transparent';
+		}
+		?>
+		<header class="inverted primarybg<?php echo $header_class; ?>">
 			<div class="header-wrap">
 				<div class="container clearfix">
 					<a class="logo logo-mobile" href="<?php echo get_home_url(); ?>">
@@ -23,7 +29,7 @@
 						</nav>
 						<nav class="secondary">
 							<a href="#" class="button">Shop</a>
-							<a href="#" class="button alt">Login</a>							
+							<a href="<?php get_home_url(); ?>login" class="button alt">Login</a>							
 							<?php include(get_views_dir().'parts/search.php'); ?>
 						</nav>
 					</div>
@@ -35,9 +41,11 @@
 				</div>
 			</div>
 		</header>
-			<section id="pageTitle">
-				<div class="container">
-					<h1>Page Title</h1>
-					ICI LE FIL D'ARIANNE
-				</div>
-			</section>
+		<?php if(get_current_route() !==''): ?>
+		<section id="pageTitle">
+			<div class="container">
+				<h1>Page Title</h1>
+				ICI LE FIL D'ARIANNE
+			</div>
+		</section>
+		<?php endif; ?>
