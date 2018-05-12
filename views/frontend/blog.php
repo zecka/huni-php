@@ -8,8 +8,15 @@
 	<div class="articles-list">
 
 <?php 
+if(is_category_listing()){
+	$current_cat_slug=get_route_last_element();
+	$current_cat=get_category_by_slug($current_cat_slug);
+	$posts=get_category_posts($current_cat['id']);
 
-$posts = get_posts();
+}else{
+	$posts = get_posts();
+}
+
 
 foreach ($posts as $key => $post): ?>
 	

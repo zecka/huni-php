@@ -80,7 +80,16 @@ function get_route_last_element(){
 function get_current_route(){
 	$route = trim($_GET['route'], '/');
 	return $route;
-	
+}
+
+function is_category_listing(){
+	$route = trim($_GET['route'], '/');
+	$route_array=explode('/', $route);
+	if($route_array[0]=='category'){
+		return true;
+	}else{
+		return false;
+	}
 }
 
 require_once('menus.php');

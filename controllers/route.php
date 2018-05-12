@@ -42,6 +42,11 @@ elseif($route_array[0]=='blog' && count($route_array)>1){
 	include(get_models_dir().'blog-item.php');
 	include(get_views_dir().'blog-item.php');
 }
+// Category listing page
+elseif($route_array[0]=='category' && count($route_array)>1){
+	
+	include(get_views_dir().'blog.php');
+}
 // ADMIN PAGE DIRECT ACCESS
 elseif($route_array[0]=='admin'){
 	

@@ -27,9 +27,27 @@ function get_post_by_slug($slug){
 	global $db;
 
 	$reponse = $db->query('SELECT * FROM posts WHERE slug="'.$slug.'"');
-	$comments = $reponse->fetchAll( PDO::FETCH_ASSOC );
+	$post = $reponse->fetchAll( PDO::FETCH_ASSOC );
 
-	return $comments;	
+	return $post[0];	
+}
+
+function get_post_categories($post_id){
+
+	global $db;
+	$query = $db->prepare( 'SELECT categories.id, categories.title, categories.slug 
+							FROM categories
+								JOIN posts_categories ON categories.id = posts_categories.id_category
+									WHERE posts_categories.id_post = :post_id');
+	
+	if ( $reponse = $query->execute( array( ':post_id' => $post_id ) ) ){
+		$categories = $query->fetchAll( PDO::FETCH_ASSOC );
+	}else{
+		// No category is found
+		$categories=array();
+	}
+
+	return $categories;	
 }
 
 function get_comments($options=array()){
@@ -61,24 +79,35 @@ function get_categories($options=array()){
 
 	return $categories;	
 }
-
-
-function get_post_categories($post_id){
+function get_category_by_slug($slug){
 
 	global $db;
-	$query = $db->prepare( 'SELECT categories.id, categories.title, categories.slug 
-							FROM categories
-								JOIN posts_categories ON categories.id = posts_categories.id_category
-									WHERE posts_categories.id_post = :post_id');
+
+	$reponse = $db->query('SELECT * FROM categories WHERE slug="'.$slug.'"');
+	$category = $reponse->fetchAll( PDO::FETCH_ASSOC );
+
+	return $category[0];	
+}
+
+/*
+ * Get posts by category id	
+*/
+function get_category_posts($category_id){
+
+	global $db;
+	$query = $db->prepare( 'SELECT *
+							FROM posts
+								JOIN posts_categories ON posts.id = posts_categories.id_post
+									WHERE posts_categories.id_category = :category_id');
 	
-	if ( $reponse = $query->execute( array( ':post_id' => $post_id ) ) ){
-		$categories = $query->fetchAll( PDO::FETCH_ASSOC );
+	if ( $reponse = $query->execute( array( ':category_id' => $category_id ) ) ){
+		$posts = $query->fetchAll( PDO::FETCH_ASSOC );
 	}else{
 		// No category is found
-		$categories=array();
+		$posts=array();
 	}
 
-	return $categories;	
+	return $posts;	
 }
 
 function list_post_categories($post_id){

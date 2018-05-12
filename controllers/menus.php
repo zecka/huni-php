@@ -14,12 +14,20 @@ function get_menu_items(){
 			'route'		=> 'blog',
 			'submenu'	=> array(
 				array(
-					'name'		=>'Catégorie 1',
-					'route'		=> 'category/cat1',				
+					'name'		=>'Design',
+					'route'		=> 'category/design',				
 				),
 				array(
-					'name'=>'Catégorie 2',
-					'route' => 'category/cat2',				
+					'name'=>'Hippie',
+					'route' => 'category/hippie',				
+				),
+				array(
+					'name'=>'Food',
+					'route' => 'category/food',				
+				),
+				array(
+					'name'=>'Mode',
+					'route' => 'category/mode',				
 				),
 			)		
 		),
