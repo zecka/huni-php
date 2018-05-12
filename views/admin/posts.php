@@ -20,12 +20,12 @@
 				<td><?php echo $post['title']; ?></td>
 				<td><?php list_post_categories($post['id']); ?></td>
 				<td>
-					<a class="btn" href="<?php echo get_home_url(); ?>admin/post/edit?id=<?php echo $post['id'] ?>">
-						<i class="fa fa-edit"></i>
-						Editer
+					<a class="btn btn-primary" href="<?php echo get_home_url(); ?>admin/user/edit?id=<?php echo $user['id'] ?>">
+						<i class="material-icons">edit</i>
+						Modifier
 					</a>
-					<a class="btn" href="<?php echo get_home_url(); ?>admin/post/delete?id=<?php echo $post['id'] ?>">
-						<i class="fa fa-trash"></i>
+					<a class="btn btn-danger" href="<?php echo get_home_url(); ?>admin/user/delete?id=<?php echo $user['id'] ?>">
+						<i class="material-icons">delete</i>
 						Supprimer
 					</a>
 				</td>

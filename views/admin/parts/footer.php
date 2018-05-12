@@ -5,7 +5,10 @@
   <script src="<?php echo $material_folder; ?>/assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="<?php echo $material_folder; ?>/assets/js/core/popper.min.js" type="text/javascript"></script>
 
+
   <script src="<?php echo get_assets_url() ?>lib/validate/jquery.validate.min.js" type="text/javascript"></script>
+  <script src="<?php echo get_assets_url() ?>lib/validate/localization/messages_fr.min.js" type="text/javascript"></script>
+
   <script src="<?php echo get_assets_url() ?>js/admin.js" type="text/javascript"></script>
 
   

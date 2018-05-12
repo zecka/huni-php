@@ -116,3 +116,16 @@ function list_post_categories($post_id){
 		  return $entry['title'];
 	}, $categories));
 }
+
+
+
+function get_users($options=array()){
+
+	global $db;
+
+	$reponse = $db->query('SELECT * FROM users');
+	$users = $reponse->fetchAll( PDO::FETCH_ASSOC );
+
+	return $users;
+	
+}

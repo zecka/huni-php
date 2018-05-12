@@ -7,6 +7,8 @@
 	
 	
     <!-- Material Kit CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+
 	<?php $material_folder=get_assets_url().'lib/material-kit'; ?>
     <link rel="stylesheet" href="<?php echo $material_folder; ?>/assets/css/material-kit.css?v=2.0.3">
     
@@ -43,17 +45,17 @@
 		$admin_nav_parts=array(
 			array(
 				'slug' => 'posts',
-				'icon' => 'fa-file-text-o',
+				'icon' => 'description',
 				'name' => 'Articles'
 			),
 			array(
 				'slug' => 'categories',
-				'icon' => 'fa-file-text-o',
+				'icon' => 'create_new_folder',
 				'name' => 'Catégories'
 			),
 			array(
 				'slug' => 'users',
-				'icon' => 'fa-users',
+				'icon' => 'people',
 				'name' => 'Utilisateurs'
 			),
 		); 
@@ -62,7 +64,7 @@
 			<?php foreach($admin_nav_parts as $nav_item): ?>
 			<li>
 				<a href="<?php echo get_home_url(); ?>admin/<?php echo $nav_item['slug']; ?>">
-					<i class="fa <?php echo $nav_item['icon']; ?>"></i>
+					<i class="material-icons"><?php echo $nav_item['icon']; ?></i>
 					<span><?php echo $nav_item['name']; ?><span>
 				</a>
 			</li>

@@ -1,4 +1,5 @@
 form{
+	margin-top: 50px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -11,19 +12,6 @@ form{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-	}
-	input, select, textarea{
-		width: 100%;
-		padding: 3px;
-	}
-	
-	input{
-		background-color: rgba(204, 204, 204, 0.5);
-		border: 0px;
-	}
-	input[type="submit"]{
-		width: 120px;
-		text-align: center;
 	}
 
 }

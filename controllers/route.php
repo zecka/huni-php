@@ -62,8 +62,8 @@ elseif($route_array[0]=='admin'){
 		 * INCLUDE MODEL
 		*/
 		// Check if target page existe in modele and include it if exist
-		if(file_exists(get_admin_models_dir().$route.'.php')){
-			include(get_admin_models_dir().$route.'.php');
+		if(file_exists(get_admin_models_dir().$admin_route.'.php')){
+			include(get_admin_models_dir().$admin_route.'.php');
 		}
 		
 		/*
