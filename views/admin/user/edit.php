@@ -35,13 +35,13 @@ if(!empty($_POST)){
 	
 	if(!empty($_POST['password'])){
 		$sql = "UPDATE users 
-				SET password=(:password),				
+				SET password=(:password)			
 				WHERE id=(:id)";
 		$res= $db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$res->execute(
 			array(
 				':password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
-				':id' => $_POST['user_id'],  	
+				':id' => $_POST['user_id']	
   	
 			)
 		);
@@ -108,7 +108,7 @@ $user_data=get_user_by_id($_GET['id']);
 	<input type="hidden" name="user_id" value="<?php echo $user_data['id']; ?>">
 	<div class="field-group ">
 		<button type="submit" class="btn btn-primary">Modifier</button>
-		<a class="btn" href="<?php get_home_url() ?>admin/users">Annuler</a>
+		<a class="btn" href="<?php echo get_home_url() ?>admin/users">Annuler</a>
 	</div>
 </form>
 

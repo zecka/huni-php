@@ -63,6 +63,10 @@ function get_sidebar(){
 	include(dirname(__DIR__).'/views/frontend/parts/sidebar.php');
 }
 
+function get_modal_delete(){
+	include(dirname(__DIR__).'/views/admin/parts/modal-delete.php');
+}
+
 
 function get_route_last_element(){
 	$route = trim($_GET['route'], '/');

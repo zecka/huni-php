@@ -7,7 +7,6 @@
 				<span aria-hidden="true"><i class="material-icons">clear</i></span>
 			</button>
 		</div>
-	
 	<?php
 	endif; ?>
 <div class="title-section">
@@ -48,7 +47,7 @@
 					<!-- Button trigger modal -->
 					<button 
 						data-link="<?php echo get_home_url(); ?>admin/user/delete?id=<?php echo $user['id'] ?>" 
-						data-username="<?php echo $user['username'] ?>"
+						data-title="<?php echo $user['username'] ?>"
 						type="button" 
 						class="btn btn-danger btn-delete" 
 						data-toggle="modal" 
@@ -66,32 +65,6 @@
 </table>
 
 
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="modal_delete" tabindex="-1" role="dialog">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h3 class="modal-title" id="exampleModalLongTitle">
-					Êtes-vous sure de vouloir supprimer l'utilisateur <strong class="modal_username">user</strong> ?
-				</h3>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				Cette action est définitive vous ne pourrez pas revenir en arrière
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-				<a href="#" id="valid_delete" class="btn btn-primary">Oui</a>
-			</div>
-		</div>
-	</div>
-</div>
-
+<?php get_modal_delete(); ?>
 
 <?php get_footer('admin'); ?>

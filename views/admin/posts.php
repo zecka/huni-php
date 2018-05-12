@@ -1,5 +1,8 @@
 <?php get_header('admin'); ?>
-<h2>Articles</h2>
+<div class="title-section">
+	<h2>Articles</h2>
+	<a class="btn btn-primary" href="<?php echo get_home_url() ?>admin/post/add">Ajouter un article</a>
+</div>
 
 <table class="table">
 	<thead>
@@ -20,14 +23,20 @@
 				<td><?php echo $post['title']; ?></td>
 				<td><?php list_post_categories($post['id']); ?></td>
 				<td>
-					<a class="btn btn-primary" href="<?php echo get_home_url(); ?>admin/user/edit?id=<?php echo $user['id'] ?>">
+					<a class="btn btn-primary" href="<?php echo get_home_url(); ?>admin/post/edit?id=<?php echo $post['id'] ?>">
 						<i class="material-icons">edit</i>
 						Modifier
 					</a>
-					<a class="btn btn-danger" href="<?php echo get_home_url(); ?>admin/user/delete?id=<?php echo $user['id'] ?>">
-						<i class="material-icons">delete</i>
-						Supprimer
-					</a>
+					<button 
+						data-link="<?php echo get_home_url(); ?>admin/post/delete?id=<?php echo $post['id'] ?>" 
+						data-title="<?php echo $post['title'] ?>"
+						type="button" 
+						class="btn btn-danger btn-delete" 
+						data-toggle="modal" 
+						data-target="#modal_delete">
+							<i class="material-icons">delete</i>
+							Supprimer
+					</button>
 				</td>
 			</tr>
 			
@@ -36,4 +45,5 @@
 		?>
 	</tbody>
 </table>
+<?php get_modal_delete(); ?>
 <?php get_footer('admin'); ?>
