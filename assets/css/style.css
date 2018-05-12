@@ -1065,7 +1065,11 @@ header nav ul {
   justify-content: space-between; }
   @media (max-width: 1199px) {
     .header-flex {
-      flex-direction: column; } }
+      flex-direction: column;
+      position: relative; }
+      .header-flex nav.secondary {
+        position: absolute;
+        right: 0; } }
   @media (max-width: 767px) {
     .header-flex {
       display: block;
@@ -1099,7 +1103,9 @@ header nav ul {
 
 nav .menu > li {
   padding-bottom: 15px; }
-nav .menu .menu-item-has-children:after {
+nav .menu li.current > a {
+  font-weight: bold; }
+nav .menu .has-children:after {
   content: "";
   display: inline-block;
   margin-left: 2px;
@@ -1108,7 +1114,7 @@ nav .menu .menu-item-has-children:after {
   position: relative;
   top: 1px; }
   @media (max-width: 767px) {
-    nav .menu .menu-item-has-children:after {
+    nav .menu .has-children:after {
       display: none; } }
 nav .menu .sub-menu {
   opacity: 0;

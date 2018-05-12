@@ -21,7 +21,7 @@
 						<nav class="primary">
 							<?php include(get_views_dir().'parts/menu.php'); ?>
 						</nav>
-						<nav class="secondary_nav">
+						<nav class="secondary">
 							<a href="#" class="button">Shop</a>
 							<a href="#" class="button alt">Login</a>							
 							<?php include(get_views_dir().'parts/search.php'); ?>

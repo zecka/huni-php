@@ -6,6 +6,7 @@
  * @return string url of assets directory.
  */
  
+ 
 
 function get_home_url(){
 
@@ -59,5 +60,26 @@ function get_sidebar(){
 	include(dirname(__DIR__).'/views/frontend/parts/sidebar.php');
 }
 
+
+function get_current_view(){
+	$route = trim($_GET['route'], '/');
+	if($route=='' || $route=='/'){
+		return 'home';
+	}else{
+		
+		$route_array=explode('/', $route);
+		$last=count($route_array) - 1;
+		return $route_array[$last];
+	}
+	
+}
+
+function get_current_route(){
+	$route = trim($_GET['route'], '/');
+	return $route;
+	
+}
+
+require_once('menus.php');
 
 ?>

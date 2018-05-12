@@ -144,6 +144,11 @@ header nav{
 	
 	@include breakpoint(md-down) {
 		flex-direction: column;
+		position: relative;
+		nav.secondary{
+			position: absolute;
+			right: 0;
+		}
 	}
 	@include breakpoint(phone) {
 		display: block;
@@ -187,7 +192,10 @@ nav .menu {
 	&>li{
 		padding-bottom: 15px;
 	}
-	.menu-item-has-children{
+	li.current > a{
+		font-weight: bold;
+	}
+	.has-children{
 		&:after{
 			content: "";
 			display: inline-block;
