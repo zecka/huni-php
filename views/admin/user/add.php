@@ -21,7 +21,7 @@ if(!empty($_POST)){
 		)
 	);
 	
-	header('Location:' .get_home_url().'admin/user/?message=add_success');
+	header('Location:' .get_home_url().'admin/users/?message=add_success');
 }
 
 ?>
@@ -82,8 +82,6 @@ if(!empty($_POST)){
 		<a class="btn" href="<?php get_home_url() ?>admin/users">Annuler</a>
 	</div>
 </form>
-
-
 
 
 <?php get_footer('admin'); ?>

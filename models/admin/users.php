@@ -13,7 +13,11 @@ if(!empty($_GET['message'])){
 	elseif($_GET['message']=='update_success'){
 		$message='Utilisateur modifié avec succès';
 		$message_type='success';
-	}else{
+	}elseif($_GET['message']=='delete_success'){
+		$message='Utilisateur supprimé avec succès';
+		$message_type='warning';
+	}
+	else{
 		$message='Erreur inconnu';
 		$message_type='danger';
 	}
