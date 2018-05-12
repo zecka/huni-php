@@ -3,15 +3,18 @@ $route = trim($_GET['route'], '/');
 $route_array=explode('/', $route);
 
 /* REDIRECT BAD ROUTE */
+// if route start with /views only redirect to same url without /views part eg: /views/contact -> /contact
 if($route_array[0]=='views'){
 	$newroute=$route_array;
 	unset($newroute[0]);
 	$newroute=get_home_url().implode('/', $newroute);
 	header('Location: ' . $newroute  );
-}elseif(in_array($route_array[0], array('controllers','models')) ){
+}
+// if routain start with /controllers or /models
+elseif(in_array($route_array[0], array('controllers','models','blog-item')) ){
 	header('Location: ' . get_home_url()  );
 }
-// 
+// if no route is found it means that it is the home.
 if($route=='' || $route=='/'){
 	include(get_views_dir().'index.php');
 }
@@ -33,7 +36,12 @@ elseif(file_exists(get_views_dir().$route.'.php')){
 	}
 	include(get_views_dir().$route.'.php');
 }
-
+// Blog item page
+elseif($route_array[0]=='blog' && count($route_array)>1){
+	
+	include(get_models_dir().'blog-item.php');
+	include(get_views_dir().'blog-item.php');
+}
 // ADMIN PAGE DIRECT ACCESS
 elseif($route_array[0]=='admin'){
 	
@@ -49,8 +57,8 @@ elseif($route_array[0]=='admin'){
 		 * INCLUDE MODEL
 		*/
 		// Check if target page existe in modele and include it if exist
-		if(file_exists(get_models_dir().$route.'.php')){
-			include(get_models_dir().$route.'.php');
+		if(file_exists(get_admin_models_dir().$route.'.php')){
+			include(get_admin_models_dir().$route.'.php');
 		}
 		
 		/*

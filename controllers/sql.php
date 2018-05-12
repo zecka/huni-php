@@ -22,6 +22,15 @@ function get_posts($options=array()){
 	return $posts;
 	
 }
+function get_post_by_slug($slug){
+
+	global $db;
+
+	$reponse = $db->query('SELECT * FROM posts WHERE slug="'.$slug.'"');
+	$comments = $reponse->fetchAll( PDO::FETCH_ASSOC );
+
+	return $comments;	
+}
 
 function get_comments($options=array()){
 

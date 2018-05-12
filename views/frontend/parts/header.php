@@ -25,7 +25,7 @@
 							<img src="<?php echo get_assets_url() ?>img/huni-logo-white.svg" />
 						</a>
 						<nav class="primary">
-							<?php include(get_views_dir().'parts/menu.php'); ?>
+							<?php display_menu(); ?>
 						</nav>
 						<nav class="secondary">
 							<a href="#" class="button">Shop</a>
@@ -44,7 +44,16 @@
 		<?php if(get_current_route() !==''): ?>
 		<section id="pageTitle">
 			<div class="container">
-				<h1>Page Title</h1>
+				<?php 
+					global $data_post;
+					if(isset($data_post)){ 
+						$title=$data_post['title'];
+					}else{
+						$title=ucfirst(get_route_last_element());
+					}
+				?>
+				
+				<h1><?php echo $title; ?></h1>
 				ICI LE FIL D'ARIANNE
 			</div>
 		</section>

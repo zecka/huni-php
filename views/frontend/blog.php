@@ -22,7 +22,7 @@ foreach ($posts as $key => $post): ?>
 			<p><?php echo $post["content"]; ?></p>
 			<div class="article-footer clearfix">
 				<div class="article-buttons">
-					<a href="" class="button">Explore more</a>
+					<a href="<?php echo get_home_url().'blog/'.$post['slug']; ?>" class="button">Explore more</a>
 					<span>
 						<?php
 						$comments=get_comments_by_id($post["id"]);

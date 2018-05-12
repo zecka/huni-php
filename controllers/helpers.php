@@ -29,7 +29,7 @@ function get_views_dir(){
 	return dirname(__DIR__).'/views/frontend/';
 }
 function get_models_dir(){
-	return dirname(__DIR__).'/models/';
+	return dirname(__DIR__).'/models/frontend/';
 }
 function get_controllers_dir(){
 	return dirname(__DIR__).'/controllers/';
@@ -38,6 +38,9 @@ function get_controllers_dir(){
 
 function get_admin_views_dir(){
 	return dirname(__DIR__).'/views/admin/';
+}
+function get_admin_models_dir(){
+	return dirname(__DIR__).'/models/admin/';
 }
 
 
@@ -61,7 +64,7 @@ function get_sidebar(){
 }
 
 
-function get_current_view(){
+function get_route_last_element(){
 	$route = trim($_GET['route'], '/');
 	if($route=='' || $route=='/'){
 		return 'home';

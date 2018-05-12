@@ -1,1 +1,0 @@
-<?php display_menu(); ?>
