@@ -129,3 +129,15 @@ function get_users($options=array()){
 	return $users;
 	
 }
+
+
+
+function get_user_by_id($id){
+
+	global $db;
+
+	$reponse = $db->query('SELECT * FROM users WHERE id="'.$id.'"');
+	$user = $reponse->fetchAll( PDO::FETCH_ASSOC );
+
+	return $user[0];	
+}

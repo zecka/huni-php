@@ -10,6 +10,13 @@ if(!empty($_GET['message'])){
 		$message='Utilisateur ajouté avec succès';
 		$message_type='success';
 	}
+	elseif($_GET['message']=='update_success'){
+		$message='Utilisateur modifié avec succès';
+		$message_type='success';
+	}else{
+		$message='Erreur inconnu';
+		$message_type='danger';
+	}
 	
 	
 }

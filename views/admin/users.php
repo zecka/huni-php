@@ -10,10 +10,10 @@
 	
 	<?php
 	endif; ?>
-
-<h2>Utilisateurs</h2>
-<a class="btn btn-primary" href="<?php echo get_home_url() ?>admin/user/add">Ajouter un utilisateur</a>
-
+<div class="title-section">
+	<h2>Utilisateurs</h2>
+	<a class="btn btn-primary" href="<?php echo get_home_url() ?>admin/user/add">Ajouter un utilisateur</a>
+</div>
 <table class="table">
 	<thead>
 		<tr>

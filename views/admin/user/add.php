@@ -78,7 +78,8 @@ if(!empty($_POST)){
 
 
 	<div class="field-group ">
-		<button type="submit" class="btn btn-default">Ajouter</button>
+		<button type="submit" class="btn btn-primary">Ajouter</button>
+		<a class="btn" href="<?php get_home_url() ?>admin/users">Annuler</a>
 	</div>
 </form>
 

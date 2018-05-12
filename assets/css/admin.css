@@ -456,7 +456,8 @@ form {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  max-width: 900px; }
   form .field {
     width: 48%;
     margin-bottom: 15px; }
@@ -482,5 +483,13 @@ main {
 
 .btn .material-icons {
   margin-left: -0.5em; }
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px; }
+  .title-section * {
+    margin: 0; }
 
 /*# sourceMappingURL=admin.css.map */

@@ -20,7 +20,17 @@ main{
 }
 
 
-
 .btn .material-icons{
 	margin-left: -0.5em;
+}
+
+
+.title-section{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 30px;
+	*{
+		margin: 0;
+	}
 }
