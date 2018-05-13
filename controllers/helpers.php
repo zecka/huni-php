@@ -96,6 +96,19 @@ function is_category_listing(){
 	}
 }
 
+function in_array_r($needle, $haystack, $strict = false) {
+    foreach ($haystack as $item) {
+        if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+require_once('formatting.php');
+require_once('file_upload.php');
 require_once('menus.php');
 
 ?>

@@ -2,13 +2,15 @@
 @import 'variables';
 @import 'parts/header';
 @import 'layout/forms';
+@import 'layout/fileinput';
+
 body{
 	background: linear-gradient(to right, darken($bg-color, 5) 0%, $bg-color 100%);
 	color: $content-color;
 }
 html,
 body{
-		height: 100%;
+	min-height: 100%;
 }
 
 a{
@@ -33,4 +35,10 @@ main{
 	*{
 		margin: 0;
 	}
+}
+
+hr.break{
+	display: block;
+	width: 100%;
+	border: 0;
 }

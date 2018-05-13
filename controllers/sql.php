@@ -22,13 +22,29 @@ function get_posts($options=array()){
 	return $posts;
 	
 }
+function get_post_by_id($id){
+
+	global $db;
+
+	$reponse = $db->query('SELECT * FROM posts WHERE id="'.$id.'"');
+	$post = $reponse->fetchAll( PDO::FETCH_ASSOC );
+	
+	$categories=get_post_categories($post[0]['id']);
+	$post[0]['categories']=$categories;
+	
+	return $post[0];	
+}
+
 function get_post_by_slug($slug){
 
 	global $db;
 
 	$reponse = $db->query('SELECT * FROM posts WHERE slug="'.$slug.'"');
 	$post = $reponse->fetchAll( PDO::FETCH_ASSOC );
-
+	
+	$categories=get_post_categories($post[0]['id']);
+	array_merge($post[0], $categories);
+	
 	return $post[0];	
 }
 

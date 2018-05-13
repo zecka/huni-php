@@ -5,7 +5,6 @@ if(empty($_GET['id'])){
 
 if(!empty($_GET['id'])){
 	global $db;
-	$sql = "DELETE FROM MyGuests WHERE id=3";
 
 	$sql = "DELETE FROM users 				
 			WHERE id=(:id)";

@@ -22,7 +22,7 @@ foreach ($posts as $key => $post): ?>
 	
 	<article class="clearfix">
 		<figure>
-			<img src="<?php echo $post["thumb"]; ?>">
+			<img src="<?php echo get_upload_url().$post["thumb"]; ?>">
 		</figure>
 		<div class="article-excerpt">
 			<h4><?php echo $post["title"]; ?></h4>
