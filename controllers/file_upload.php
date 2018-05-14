@@ -35,7 +35,7 @@ function file_upload(){
 	}
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
-	    $alert = "Sorry, your file was not uploaded.";
+	   // $alert = "Sorry, your file was not uploaded.";
 	// if everything is ok, try to upload file
 	} else {
 		

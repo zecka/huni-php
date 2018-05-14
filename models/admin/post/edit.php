@@ -6,9 +6,19 @@ if(empty($_POST) && empty($_GET['id'])){
 $id_post=$_GET['id'];
 $post_data=get_post_by_id($id_post);
 
-
+// Vérify if an image is has been selected
 if(!empty($_FILES['image_field']['name'])){
 	$upload = file_upload();
+	// If a previous image exist and the new image is upload successfull 
+	// -> delete previous then replace by the new image
+	if($post_data['thumb']!='' && $upload['upload_ok']){
+		$file=get_root_path().'assets/upload/'.$post_data['thumb'];
+		if (file_exists($file)) {
+			unlink($file);
+		}	
+	}
+	
+	
 }else{
 	$upload=array(
 		'upload_ok' => 1,
@@ -20,6 +30,7 @@ if(!empty($_FILES['image_field']['name'])){
 
 if(!$upload['upload_ok'] || empty($_POST)){
 	$message=$upload['alert'];
+	$message_type="alert";
 }else{
 
 	try{

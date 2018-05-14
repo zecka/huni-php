@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  sam. 12 mai 2018 à 10:45
+-- Généré le :  lun. 14 mai 2018 à 14:55
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.0.22
 
@@ -64,6 +64,19 @@ CREATE TABLE `comments` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `posts`
 --
 
@@ -82,8 +95,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `content`, `thumb`, `slug`, `date`, `user`) VALUES
-(1, 'Sort your paperwork for home loan success', 'Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.\r\n\r\nNulla quis lorem ut libero malesuada feugiat. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit.\r\n\r\nNulla quis lorem ut libero malesuada feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 'http://www.leconews.com/images/2017/06/01/paix-dans-le-monde_861332.jpg', 'sort-your-paperwork-for-home-loan-success', '2018-05-02 15:22:15', 1),
-(2, 'La paix dans le monde ', 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Quisque velit nisi, pretium ut lacinia in, elementum id enim.\r\n\r\nDonec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.\r\n\r\nQuisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'http://www.leconews.com/images/2017/06/01/paix-dans-le-monde_861332_679x417.jpg', 'la-paix-dans-le-monde', '2018-05-02 15:22:15', 1);
+(11, 'La tête a Mathieu', '<p>Beau goss</p>', 'photo-le-140518-a-0902.jpg', 'la-tete-a-mathieu', '2018-05-14 09:02:39', 0);
 
 -- --------------------------------------------------------
 
@@ -102,10 +114,7 @@ CREATE TABLE `posts_categories` (
 --
 
 INSERT INTO `posts_categories` (`id`, `id_post`, `id_category`) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 1, 4),
-(4, 2, 3);
+(29, 11, 1);
 
 -- --------------------------------------------------------
 
@@ -130,8 +139,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `username`, `firstname`, `lastname`, `password`, `bio`, `role`, `date`) VALUES
-(1, 'leitnermat@gmail.com', 'madmat', 'Mahtieu', 'Leitner', '70ec505bb2d0a430342d50e2fd6ef8a5', 'Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.', 'admin', '2018-05-02 15:05:28'),
-(2, 'ferrari.robin@gmail.com', 'zecka', 'Robin', 'Ferrari', '$2y$10$6vgu3vCro7662h.Il/vz4OjYlZCKSa53jr3Rp561GrCb0otb1nZh6', 'Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.', 'admin', '2018-05-02 15:32:07');
+(1, 'leitnermat@gmail.com', 'Madmat', 'Mahtieu', 'Leitner', '70ec505bb2d0a430342d50e2fd6ef8a5', 'Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.', 'admin', '2018-05-02 15:05:28'),
+(2, 'ferrari.robin@gmail.com', 'zecka', 'Robin', 'Ferrari', '$2y$10$o9V4PEzL8dRInFS7hjumP.vmpbki8kPZjJnxJz6aT8cztDQfd9Xtu', 'SALUT LES POTES', 'admin', '2018-05-12 14:24:13'),
+(3, 'hasinah.tabet@crea-inseec.com', 'Hasinah', 'Hasinah', 'Tabet', '$2y$10$.SE5yERv944SksHGGec8Z.Cl0Vu6OujCXc9yPIPauGXAnjXZG7Ihe', '', 'admin', '2018-05-14 14:53:06');
 
 --
 -- Index pour les tables déchargées
@@ -147,6 +157,12 @@ ALTER TABLE `categories`
 -- Index pour la table `comments`
 --
 ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -183,20 +199,25 @@ ALTER TABLE `categories`
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `posts_categories`
 --
 ALTER TABLE `posts_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
